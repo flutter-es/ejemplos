@@ -22,8 +22,11 @@ done
 
 # Analyze other samples
 
-for D in ./!(cookbook); do
+for D in ./; do
 
+  if [ "$D" == "cookbook" ] ; then
+              continue;
+  fi
   if [ -d "${D}" ]; then
 		echo "${D}"
     echo "Run flutter packages get on ${D}"
