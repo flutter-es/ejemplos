@@ -22,7 +22,7 @@ done
 
 # Analyze other samples
 
-for D in ./; do
+for D in *; do
 
   if [ "$D" == "cookbook" ] ; then
               continue;
