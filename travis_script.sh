@@ -30,10 +30,10 @@ for D in *; do
   if [ -d "${D}" ]; then
 		echo "${D}"
     echo "Run flutter packages get on ${D}"
-    # ../flutter/bin/flutter packages get ${D}
+    ../flutter/bin/flutter packages get ${D}
 		
 		echo "Run flutter analyze on ${D}"
-		# ../flutter/bin/flutter analyze ${D}
+		../flutter/bin/flutter analyze ${D}
 
   fi
 done
