@@ -39,6 +39,7 @@ Todo PR requiere revisión por al menos 2 miembros.
 
 * Una descripción detallada del funcionamiento del ejemplo , mótivos de su realización, arquitectura que usa, o cualquier cosa que sea conventiente explicar para el mejor entendimiento del ejemplo.
 * Pruebas unitarias.
+* Captura de pantalla o gif animado , ver como [crear gif de tu app](https://github.com/flutter/flutter/wiki/Making-animated-GIFs-of-Flutter-apps)
 
 
 
