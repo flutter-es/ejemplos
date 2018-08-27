@@ -11,10 +11,10 @@ export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRAN
 for D in cookbook/*; do
   if [ -d "${D}" ]; then
     echo "Run flutter packages get on ${D}"
-    ../flutter/bin/flutter packages get ${D}
+    ./flutter/bin/flutter packages get ${D}
 		
 		echo "Run flutter analyze on ${D}"
-		../flutter/bin/flutter analyze ${D}
+		./flutter/bin/flutter analyze ${D}
 
   fi
 done
@@ -28,10 +28,10 @@ for D in *; do
   fi
   if [ -d "${D}" ]; then
     echo "Run flutter packages get on ${D}"
-    ../flutter/bin/flutter packages get ${D}
+    ./flutter/bin/flutter packages get ${D}
 		
 		echo "Run flutter analyze on ${D}"
-		../flutter/bin/flutter analyze ${D}
+		./flutter/bin/flutter analyze ${D}
 
   fi
 done
