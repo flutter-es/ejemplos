@@ -24,7 +24,7 @@ done
 
 for D in *; do
 
-  if [ "$D" == "cookbook" ] ; then
+  if [ "$D" == "cookbook" || "$D" == "flutter"  ] ; then
               continue;
   fi
   if [ -d "${D}" ]; then
