@@ -28,7 +28,7 @@ mira primero las [guías de estilo Dart](https://www.dartlang.org/guides/languag
 
 Para subir un ejemplo deberás crear un PR, para ello, crea una rama nueva donde trabajar tu ejemplo dentro de una carpeta nombrada convenientemente, y envia luego tu [pull request](https://github.com/flutter-es/plugins/pulls).
 
-Todo PR requiere revisión por al menos 1 miembros.
+Todo PR requiere revisión por al menos 1 miembro.
 
 ### Condiciones mínimas para aceptar un ejemplo.
 
