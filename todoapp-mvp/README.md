@@ -17,3 +17,7 @@ Es el puente que conecta la vista del modelo. Se va a encargar de obtener los da
 ### Modelo
 
 Es una interfaz que define los datos que van a ser mostrados al usuario
+
+## Requerimientos
+
+* [sqflite](https://github.com/tekartik/sqflite)
