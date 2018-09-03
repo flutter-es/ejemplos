@@ -1,5 +1,8 @@
 import '../db/const.dart';
 
+/// El objeto [Task] representa de forma
+/// abstracta a las tareas que son agregadas, borradas
+/// actualizadas, etc.
 class Task {
   int id;
   bool done;

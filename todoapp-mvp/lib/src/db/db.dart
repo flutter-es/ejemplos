@@ -4,6 +4,9 @@ import 'package:sqflite/sqflite.dart';
 
 import './const.dart';
 
+/// Se encarga de crear la base de datos
+/// y si el desarrollador así lo prefiere,
+/// sus tablas de base de datos.
 Future<Database> openLocalDatabase() async {
   String databasesPath = await getDatabasesPath();
   String path = join(databasesPath, DatabaseConstants.DB_NAME);
