@@ -4,6 +4,11 @@ import '../task.dart';
 import './local/repository.dart';
 import './source.dart';
 
+/// El [Repository] va a encargarse de decidir
+/// cual modelo(local o remoto) usar.
+///
+/// Para este ejemplo solo se va a usar un modelo
+/// local(sqlite3).
 class Repository implements DataSource {
   LocalRepository repository;
 

@@ -4,6 +4,9 @@ import '../../task.dart';
 import '../../../db/const.dart';
 import '../source.dart';
 
+
+/// El [LocalRepository] es el modelo local, el cual,
+/// va a ejecutar querys a la base de datos local.
 class LocalRepository implements DataSource {
   Database database;
 
