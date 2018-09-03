@@ -12,7 +12,7 @@ Es la encargada de renderizar los gráficos de la aplicación, e.j: diálogos, i
 
 ### Presentador
 
-Es el puente que conecta la vista del modelo. Se va a encargar de obtener los datos del modelo y mostrarlos en la vista.
+Es el puente que conecta la vista con el modelo. Se va a encargar de obtener los datos del modelo y mostrarlos en la vista.
 
 ### Modelo
 
