@@ -3,9 +3,7 @@
 /// base con el [modelo].
 abstract class BasePresenter {
 
-  /// Inicializa o crear todas las conexiones
-  /// a base de datos, websockets, servidores http, ftp
-  /// entre otros.
+  /// Inicializa las dependencias necesarias para el presenter.
   ///
   /// Este método debe ser llamado desde la [vista], dentro del
   /// método [initState].
@@ -19,8 +17,7 @@ abstract class BasePresenter {
   /// }
   void initPresenter();
 
-  /// Cierra las conexiones a bases de datos, websockets,
-  /// etc... y así liberar recursos del sistema.
+  /// Libera los recursos asociados al presenter.
   ///
   /// Este método debe ser llamado desde la [vista], dentro del
   /// método [dispose].

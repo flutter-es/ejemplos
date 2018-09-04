@@ -1,28 +1,27 @@
-import 'package:sqflite/sqflite.dart';
 
+
+import 'package:todomvp/src/domain/task.dart';
+import 'package:todomvp/src/services/repository.dart';
+import 'package:todomvp/src/services/taskRepository.dart';
 import './contract.dart';
-import '../data/task.dart';
-import '../data/repository/repository.dart';
 
 class TaskDetailPresenter implements BaseTaskDetailPresenter {
   BaseTaskDetailView view;
-  Repository repository;
+  Repository taskRepository;
 
-  TaskDetailPresenter(BaseTaskDetailView view, Database db) {
+  TaskDetailPresenter(BaseTaskDetailView view) {
     this.view = view;
-    this.view.setPresenter(this);
-
-    this.repository = Repository(db);
+    this.taskRepository = new TaskRepository();
   }
 
   @override
-  void dispose() {}
+  void dispose() => {};
 
   @override
-  void initPresenter() {}
+  void initPresenter() => taskRepository.initialize();
 
   @override
   deleteTask(Task task) {
-    repository.deleteTask(task, () {}, (err) {});
+    taskRepository.delete(task, () {}, (err) {});
   }
 }

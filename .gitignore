@@ -7,3 +7,9 @@ build/
 packages
 .packages
 pubspec.lock
+
+todoapp-mvp/ios/Flutter/Debug\.xcconfig
+
+*.xcconfig
+
+todoapp-mvp/ios/Podfile

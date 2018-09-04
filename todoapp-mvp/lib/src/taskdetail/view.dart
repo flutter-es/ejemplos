@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:sqflite/sqflite.dart';
+import 'package:todomvp/src/domain/task.dart';
+import 'package:todomvp/src/taskdetail/contract.dart';
+import 'package:todomvp/src/taskdetail/presenter.dart';
 
-import '../data/task.dart';
-import './contract.dart';
-import './presenter.dart';
 
 class TaskDetailView extends StatefulWidget {
   final Task task;
-  final Database db;
   final VoidCallback onTaskDeleted;
 
-  const TaskDetailView(
-      {Key key, @required this.task, @required this.db, this.onTaskDeleted})
+  const TaskDetailView({Key key, @required this.task, this.onTaskDeleted})
       : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _TaskDetailViewState(db);
+  State<TaskDetailView> createState() => _TaskDetailViewState();
 }
 
-class _TaskDetailViewState extends State<TaskDetailView>
-    implements BaseTaskDetailView {
-  BaseTaskDetailPresenter presenter;
+class _TaskDetailViewState extends State<TaskDetailView> implements BaseTaskDetailView {
+    BaseTaskDetailPresenter presenter;
 
-  _TaskDetailViewState(Database db) {
-    new TaskDetailPresenter(this, db);
+    _TaskDetailViewState() {
+      presenter = new TaskDetailPresenter(this);
   }
 
   @override
@@ -64,8 +60,4 @@ class _TaskDetailViewState extends State<TaskDetailView>
     ]);
   }
 
-  @override
-  void setPresenter(BaseTaskDetailPresenter presenter) {
-    this.presenter = presenter;
-  }
 }

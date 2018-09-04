@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todomvp/src/domain/task.dart';
 
-import '../../data/task.dart';
 
 typedef OnTaskCallback(Task task);
 

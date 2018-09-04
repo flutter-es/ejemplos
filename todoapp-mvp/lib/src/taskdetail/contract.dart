@@ -4,8 +4,7 @@
 
 import '../presenter.dart';
 import '../view.dart';
-import '../data/task.dart';
-
+import 'package:todomvp/src/domain/task.dart';
 
 /// Va a definir los metodos que van a ser llamados desde
 /// la vista, para agregar, actualizar, eliminar u obtener

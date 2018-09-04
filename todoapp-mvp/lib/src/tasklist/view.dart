@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../data/task.dart';
+import 'package:todomvp/src/domain/task.dart';
 import './contract.dart';
 import './presenter.dart';
 import '../taskdetail/view.dart';
-
 import './widgets/taskaddeddialog.dart';
 import './widgets/taskwidget.dart';
 
@@ -24,7 +22,7 @@ class _TaskListState extends State<TaskList> implements BaseTaskListView {
   final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey<ScaffoldState>();
 
   _TaskListState() {
-    new TaskListPresenter(this);
+   presenter = new TaskListPresenter(this);
   }
 
   @override
@@ -46,11 +44,6 @@ class _TaskListState extends State<TaskList> implements BaseTaskListView {
         appBar: createAppBar(),
         body: body,
         floatingActionButton: createFloatingButton());
-  }
-
-  @override
-  void setPresenter(BaseTaskListPresenter presenter) {
-    this.presenter = presenter;
   }
 
   @override
@@ -114,7 +107,6 @@ class _TaskListState extends State<TaskList> implements BaseTaskListView {
                 .push(MaterialPageRoute(builder: (BuildContext context) {
               return TaskDetailView(
                 task: task,
-                db: (presenter as TaskListPresenter).db,
                 onTaskDeleted: () {
                   presenter.getTasks();
                 },

@@ -1,45 +1,32 @@
-import 'package:sqflite/sqflite.dart';
-
-import '../data/task.dart';
+import 'package:todomvp/src/domain/task.dart';
+import 'package:todomvp/src/services/repository.dart';
+import 'package:todomvp/src/services/taskRepository.dart';
 import './contract.dart';
-import '../data/repository/source.dart';
-import '../data/repository/repository.dart';
-import '../db/db.dart';
+
 
 class TaskListPresenter implements BaseTaskListPresenter {
   BaseTaskListView view;
-  DataSource repository;
-  Database db;
+  Repository taskRepository;
 
   TaskListPresenter(BaseTaskListView view) {
     this.view = view;
-    this.view.setPresenter(this);
+    this.taskRepository = new TaskRepository();
   }
 
   @override
-  void initPresenter() {
-    openLocalDatabase().then((Database db) {
-      this.db = db;
-      this.repository = Repository(db);
-      this.getTasks();
-    }).catchError((err) {
-      this.view.showEmptyMessage();
-      if ((err as DatabaseException).isSyntaxError()) {
-        this.view.showAlertErrorMessage('SQL syntax error');
-      } else if ((err as DatabaseException).isOpenFailedError()) {
-        this.view.showAlertErrorMessage('cannot open database');
-      }
-    });
+  void initPresenter() async {
+    await taskRepository.initialize();
+    getTasks();
   }
 
   @override
   void dispose() {
-    if (db != null && db.isOpen) db.close();
+    taskRepository.dispose();
   }
 
   @override
   void addTask(Task task) {
-    this.repository.insertTask(task, (Task task) {
+    this.taskRepository.insert(task, (Task task) {
       this.view.showTasks([task]);
     }, (err) {
       this.view.showAlertErrorMessage('SQL syntax error');
@@ -48,7 +35,7 @@ class TaskListPresenter implements BaseTaskListPresenter {
 
   @override
   void getTasks() {
-    this.repository.getTasks((List<Task> tasks) {
+    this.taskRepository.getAll((List<Task> tasks) {
       this.view.showTasks(tasks);
     }, (error) {
       if ('$error'.length == 0) {
@@ -62,7 +49,7 @@ class TaskListPresenter implements BaseTaskListPresenter {
 
   @override
   void removeAllTasks() {
-    this.repository.deleteAllTasks(() {
+    this.taskRepository.deleteAll(() {
       // no se hace nada
     }, (err) {
       this.view.showAlertErrorMessage('SQL syntax error');
@@ -71,7 +58,7 @@ class TaskListPresenter implements BaseTaskListPresenter {
 
   @override
   void updateTask(Task task) {
-    this.repository.updateTask(task, (Task task) {
+    this.taskRepository.update(task, (Task task) {
       String tmp = task.done ? 'complete' : 'not complete';
       this.view.showUpdatedDoneMessage(
           'Task ${task..shortDescription} is market as $tmp');

@@ -1,8 +1,10 @@
+
+
 /// EL contract normalmente es el lugar donde
 /// se definen las vistas y presentadores base
 /// de cada widget.
 
-import '../data/task.dart';
+import 'package:todomvp/src/domain/task.dart';
 import '../presenter.dart';
 import '../view.dart';
 
