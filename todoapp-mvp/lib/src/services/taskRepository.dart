@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:todomvp/src/domain/task.dart';
 import 'package:todomvp/src/services/datasources/datasource.dart';
-import 'package:todomvp/src/services/datasources/local/localRepositoryImpl.dart';
+import 'package:todomvp/src/services/datasources/local/localDataSource.dart';
 import 'package:todomvp/src/services/repository.dart';
 
 /// El [TaskRepository] va a encargarse de decidir
