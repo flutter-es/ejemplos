@@ -47,7 +47,7 @@ class LoadImage extends StatefulWidget {
 
 class LoadImageState extends State<LoadImage>
     with SingleTickerProviderStateMixin {
-  Photo _selectedPhotos = photos[0];
+  //Photo _selectedPhotos = photos[0];
   int _bottomNavBarIndex = 0;
   TabController _tabController;
 
@@ -66,7 +66,7 @@ class LoadImageState extends State<LoadImage>
 
   void _selectedPhoto(Photo photo) {
     setState(() {
-      _selectedPhotos = photo;
+      //_selectedPhotos = photo;
       _bottomNavBarIndex = photo.index;
       _tabController.index = photo.index;
     });
