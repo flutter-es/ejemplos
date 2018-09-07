@@ -59,14 +59,15 @@ class LoadImageState extends State<LoadImage>
 
   @override
   void initState() {
+    super.initState();
     _tabController = new TabController(length: photos.length, vsync: this);
     _tabController.addListener(_tabUpdate);
   }
 
   void _selectedPhoto(Photo photo) {
     setState(() {
-      _bottomNavBarIndex = photo.index;
       _selectedPhotos = photo;
+      _bottomNavBarIndex = photo.index;
       _tabController.index = photo.index;
     });
   }
@@ -75,6 +76,7 @@ class LoadImageState extends State<LoadImage>
   void dispose() {
     _tabController.dispose();
     _tabController.removeListener(_tabUpdate);
+    super.dispose();
   }
 
   @override
