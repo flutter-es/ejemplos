@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //Quita el banner de Debug que se pone en la parte superior izq
       debugShowCheckedModeBanner: false,
       title: 'Chuck Norris Quote',
       theme: ThemeData(
@@ -32,11 +33,13 @@ class _MyHomePageState extends State<MyHomePage> {
    Quote random;
    var isLoading = false;
 
+   //Método para traer las frases aleatorias.
    _fetchRandomQuote() async {
     setState(() {
       isLoading = true;
     });
 
+    //Espera del resultado
     final response =  await http.get("https://api.chucknorris.io/jokes/random");
 
     if (response.statusCode == 200) {
@@ -47,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
       });
 
     } else {
-      throw Exception('Failed to load quotes');
+      throw Exception('Falla al cargar frases');
     }
   }
 
@@ -81,6 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 Widget showQuote (Quote quote){
+  // Creacion de Widget separado para código mas limpio
+
+  // Como crear estilo separado de texto para eliminar DRY
   TextStyle estilo = TextStyle(
     fontSize: 24.0,
     fontStyle: FontStyle.italic,
@@ -92,7 +98,9 @@ Widget showQuote (Quote quote){
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
+        // Mostrar una imagen que se trae desde web
         Image.network(quote.icon_url),
+        // Realiza una separación de la imagen con el texto.
         SizedBox(height: 50.0),
         Text(quote.value, style: estilo, textAlign: TextAlign.center),
       ],

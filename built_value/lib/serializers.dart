@@ -19,11 +19,15 @@ part 'serializers.g.dart';
 /// contendra los serializadores para todos los tipos preguntados para aumentar
 /// explicitamente todos los tipos necesitados transitivamente a través de los campos
 ///
-/// Usualmente solo necesitares hacer uno por proyecto.
+/// Usualmente solo necesitaras hacer uno por proyecto.
+// Solo de agrego Quote todo lo demas es parte del documento de ejemplo de David morgan tiene de ejemplo
+// en su documentación.
 @SerializersFor(const [
   Quote
 ])
 Serializers serializers = _$serializers;
 
+// Serializer no utiliza un decodificador regular de JSON por lo que es importante hacer uso de
+// standard_json_plugin.dart el cual es importado al inicio del documento.
 Serializers standardSerializers =
 (serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();
