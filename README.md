@@ -26,7 +26,7 @@ Estos son los ejemplos disponibles:
 Si quieres contribuir con un nuevo ejemplo a este repositorio, por favor 
 mira primero las [guías de estilo Dart](https://www.dartlang.org/guides/language/effective-dart/style).
 
-Para subir un ejemplo deberás crear un PR, para ello, crea una rama nueva donde trabajar tu ejemplo dentro de una carpeta nombrada convenientemente, y envia luego tu [pull request](https://github.com/flutter-es/plugins/pulls).
+Para subir un ejemplo deberás crear un PR, para ello, crea una rama nueva donde trabajar tu ejemplo dentro de una carpeta nombrada convenientemente, y envia luego tu [pull request](https://github.com/flutter-es/ejemplos/pulls).
 
 Todo PR requiere revisión por al menos 1 miembro.
 
