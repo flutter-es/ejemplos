@@ -30,17 +30,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-   Quote random;
-   var isLoading = false;
+  Quote random;
+  var isLoading = false;
 
-   //Método para traer las frases aleatorias.
-   _fetchRandomQuote() async {
+  //Método para traer las frases aleatorias.
+  _fetchRandomQuote() async {
     setState(() {
       isLoading = true;
     });
 
     //Espera del resultado
-    final response =  await http.get("https://api.chucknorris.io/jokes/random");
+    final response = await http.get("https://api.chucknorris.io/jokes/random");
 
     if (response.statusCode == 200) {
       random = parseQuote(response.body);
@@ -48,7 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         isLoading = false;
       });
-
     } else {
       throw Exception('Falla al cargar frases');
     }
@@ -57,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-     _fetchRandomQuote();
+    _fetchRandomQuote();
   }
 
   @override
@@ -71,19 +70,19 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(24.0),
         child: FlatButton(
           child: Text("Random Quote"),
-          onPressed: (){
-              _fetchRandomQuote();
+          onPressed: () {
+            _fetchRandomQuote();
           },
         ),
       ),
-    body: Center(
-      child: isLoading ? CircularProgressIndicator() : showQuote(random),
-    ),
+      body: Center(
+        child: isLoading ? CircularProgressIndicator() : showQuote(random),
+      ),
     );
   }
 }
 
-Widget showQuote (Quote quote){
+Widget showQuote(Quote quote) {
   // Creacion de Widget separado para código mas limpio
 
   // Como crear estilo separado de texto para eliminar DRY
@@ -98,8 +97,14 @@ Widget showQuote (Quote quote){
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        // Mostrar una imagen que se trae desde web
-        Image.network(quote.iconUrl),
+        // Mostrar una imagen que trae desde web
+        quote.iconUrl == null
+            ? SizedBox(
+                height: 200.0,
+                child: Image.network(
+                    "https://cdn.pixabay.com/photo/2013/07/13/13/34/man-161135_960_720.png"),
+              )
+            : Image.network(quote.iconUrl),
         // Realiza una separación de la imagen con el texto.
         SizedBox(height: 50.0),
         Text(quote.value, style: estilo, textAlign: TextAlign.center),
