@@ -13,7 +13,7 @@ abstract class Quote implements Built<Quote, QuoteBuilder> {
 
   //Estos campos son los que utilizan crean para pasar de el json que regresa el API a un objeto Quote
   String get id;
-  String get icon_url;
+  String get iconUrl;
   String get url;
   String get value;
 

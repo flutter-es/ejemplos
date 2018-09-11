@@ -9,10 +9,15 @@ part of 'quote.dart';
 // ignore_for_file: always_put_control_body_on_new_line
 // ignore_for_file: annotate_overrides
 // ignore_for_file: avoid_annotating_with_dynamic
+// ignore_for_file: avoid_catches_without_on_clauses
 // ignore_for_file: avoid_returning_this
+// ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: omit_local_variable_types
 // ignore_for_file: prefer_expression_function_bodies
 // ignore_for_file: sort_constructors_first
+// ignore_for_file: unnecessary_const
+// ignore_for_file: unnecessary_new
+// ignore_for_file: test_types_in_equals
 
 Serializer<Quote> _$quoteSerializer = new _$QuoteSerializer();
 
@@ -24,12 +29,12 @@ class _$QuoteSerializer implements StructuredSerializer<Quote> {
 
   @override
   Iterable serialize(Serializers serializers, Quote object,
-      {FullType specifiedType: FullType.unspecified}) {
+      {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
-      'icon_url',
-      serializers.serialize(object.icon_url,
+      'iconUrl',
+      serializers.serialize(object.iconUrl,
           specifiedType: const FullType(String)),
       'url',
       serializers.serialize(object.url, specifiedType: const FullType(String)),
@@ -43,7 +48,7 @@ class _$QuoteSerializer implements StructuredSerializer<Quote> {
 
   @override
   Quote deserialize(Serializers serializers, Iterable serialized,
-      {FullType specifiedType: FullType.unspecified}) {
+      {FullType specifiedType = FullType.unspecified}) {
     final result = new QuoteBuilder();
 
     final iterator = serialized.iterator;
@@ -56,8 +61,8 @@ class _$QuoteSerializer implements StructuredSerializer<Quote> {
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'icon_url':
-          result.icon_url = serializers.deserialize(value,
+        case 'iconUrl':
+          result.iconUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case 'url':
@@ -79,7 +84,7 @@ class _$Quote extends Quote {
   @override
   final String id;
   @override
-  final String icon_url;
+  final String iconUrl;
   @override
   final String url;
   @override
@@ -88,12 +93,19 @@ class _$Quote extends Quote {
   factory _$Quote([void updates(QuoteBuilder b)]) =>
       (new QuoteBuilder()..update(updates)).build();
 
-  _$Quote._({this.id, this.icon_url, this.url, this.value}) : super._() {
-    if (id == null) throw new BuiltValueNullFieldError('Quote', 'id');
-    if (icon_url == null)
-      throw new BuiltValueNullFieldError('Quote', 'icon_url');
-    if (url == null) throw new BuiltValueNullFieldError('Quote', 'url');
-    if (value == null) throw new BuiltValueNullFieldError('Quote', 'value');
+  _$Quote._({this.id, this.iconUrl, this.url, this.value}) : super._() {
+    if (id == null) {
+      throw new BuiltValueNullFieldError('Quote', 'id');
+    }
+    if (iconUrl == null) {
+      throw new BuiltValueNullFieldError('Quote', 'iconUrl');
+    }
+    if (url == null) {
+      throw new BuiltValueNullFieldError('Quote', 'url');
+    }
+    if (value == null) {
+      throw new BuiltValueNullFieldError('Quote', 'value');
+    }
   }
 
   @override
@@ -104,11 +116,11 @@ class _$Quote extends Quote {
   QuoteBuilder toBuilder() => new QuoteBuilder()..replace(this);
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    if (other is! Quote) return false;
-    return id == other.id &&
-        icon_url == other.icon_url &&
+    return other is Quote &&
+        id == other.id &&
+        iconUrl == other.iconUrl &&
         url == other.url &&
         value == other.value;
   }
@@ -116,7 +128,7 @@ class _$Quote extends Quote {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, id.hashCode), icon_url.hashCode), url.hashCode),
+        $jc($jc($jc(0, id.hashCode), iconUrl.hashCode), url.hashCode),
         value.hashCode));
   }
 
@@ -124,7 +136,7 @@ class _$Quote extends Quote {
   String toString() {
     return (newBuiltValueToStringHelper('Quote')
           ..add('id', id)
-          ..add('icon_url', icon_url)
+          ..add('iconUrl', iconUrl)
           ..add('url', url)
           ..add('value', value))
         .toString();
@@ -138,9 +150,9 @@ class QuoteBuilder implements Builder<Quote, QuoteBuilder> {
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
-  String _icon_url;
-  String get icon_url => _$this._icon_url;
-  set icon_url(String icon_url) => _$this._icon_url = icon_url;
+  String _iconUrl;
+  String get iconUrl => _$this._iconUrl;
+  set iconUrl(String iconUrl) => _$this._iconUrl = iconUrl;
 
   String _url;
   String get url => _$this._url;
@@ -155,7 +167,7 @@ class QuoteBuilder implements Builder<Quote, QuoteBuilder> {
   QuoteBuilder get _$this {
     if (_$v != null) {
       _id = _$v.id;
-      _icon_url = _$v.icon_url;
+      _iconUrl = _$v.iconUrl;
       _url = _$v.url;
       _value = _$v.value;
       _$v = null;
@@ -165,7 +177,9 @@ class QuoteBuilder implements Builder<Quote, QuoteBuilder> {
 
   @override
   void replace(Quote other) {
-    if (other == null) throw new ArgumentError.notNull('other');
+    if (other == null) {
+      throw new ArgumentError.notNull('other');
+    }
     _$v = other as _$Quote;
   }
 
@@ -176,8 +190,8 @@ class QuoteBuilder implements Builder<Quote, QuoteBuilder> {
 
   @override
   _$Quote build() {
-    final _$result = _$v ??
-        new _$Quote._(id: id, icon_url: icon_url, url: url, value: value);
+    final _$result =
+        _$v ?? new _$Quote._(id: id, iconUrl: iconUrl, url: url, value: value);
     replace(_$result);
     return _$result;
   }

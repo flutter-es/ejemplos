@@ -99,7 +99,7 @@ Widget showQuote (Quote quote){
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         // Mostrar una imagen que se trae desde web
-        Image.network(quote.icon_url),
+        Image.network(quote.iconUrl),
         // Realiza una separación de la imagen con el texto.
         SizedBox(height: 50.0),
         Text(quote.value, style: estilo, textAlign: TextAlign.center),
