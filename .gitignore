@@ -7,6 +7,3 @@ build/
 packages
 .packages
 pubspec.lock
-_site/
-Gemfile
-Gemfile.lock
