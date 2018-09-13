@@ -6,7 +6,7 @@ puedes ver la documentación del paquete [aquí](https://pub.dartlang.org/packag
 
 Este deberá ser su resultado:
 
-![Ejemplo uso de built_value](/images/built_value.gif)
+![Ejemplo uso de built_value](https://github.com/flutter-es/ejemplos/built_value/images/built_value.gif)
 
 ## Si requieres información para empezar
 
