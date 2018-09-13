@@ -4,6 +4,8 @@ Este proyecto de **Flutter** muestra como es el uso del paquete _built value_
 creador por David Morgan el cual trabaja para el equipo de **Dart** en Google
 puedes ver la documentación del paquete [aquí](https://pub.dartlang.org/packages/built_value).
 
+![Ejemplo uso de built_value](/images/built_value.gif)
+
 ## Si requieres información para empezar
 
 Para mas ayudar con Flutter, ve nuestra
