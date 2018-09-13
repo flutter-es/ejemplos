@@ -33,18 +33,15 @@ class _$QuoteSerializer implements StructuredSerializer<Quote> {
     final result = <Object>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
+      'icon_url',
+      serializers.serialize(object.iconUrl,
+          specifiedType: const FullType(String)),
       'url',
       serializers.serialize(object.url, specifiedType: const FullType(String)),
       'value',
       serializers.serialize(object.value,
           specifiedType: const FullType(String)),
     ];
-    if (object.iconUrl != null) {
-      result
-        ..add('iconUrl')
-        ..add(serializers.serialize(object.iconUrl,
-            specifiedType: const FullType(String)));
-    }
 
     return result;
   }
@@ -64,7 +61,7 @@ class _$QuoteSerializer implements StructuredSerializer<Quote> {
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'iconUrl':
+        case 'icon_url':
           result.iconUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
@@ -99,6 +96,9 @@ class _$Quote extends Quote {
   _$Quote._({this.id, this.iconUrl, this.url, this.value}) : super._() {
     if (id == null) {
       throw new BuiltValueNullFieldError('Quote', 'id');
+    }
+    if (iconUrl == null) {
+      throw new BuiltValueNullFieldError('Quote', 'iconUrl');
     }
     if (url == null) {
       throw new BuiltValueNullFieldError('Quote', 'url');

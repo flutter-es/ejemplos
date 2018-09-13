@@ -99,7 +99,7 @@ Widget showQuote(Quote quote) {
       children: <Widget>[
         // Mostrar una imagen que trae desde web
         quote.iconUrl == null
-            ? SizedBox(
+            ? SizedBox( // Esta es unicamente para poner una imagen en caso de que no venga el icono -- ejemplo
                 height: 200.0,
                 child: Image.network(
                     "https://cdn.pixabay.com/photo/2013/07/13/13/34/man-161135_960_720.png"),
