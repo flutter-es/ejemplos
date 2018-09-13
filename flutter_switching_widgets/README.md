@@ -64,5 +64,5 @@ Se describe cómo cambiar entre widgets de imágenes usando el TabBar.
 * Actualizar el TabBar desde el drawer y el menú popup
 * Actualizar el BottomNavigationBar desde el listener de TabController
 
-![Flutter Switching Widgets Demo](/images/moverse_entre_widgets.gif)
+![Flutter Switching Widgets Demo](https://github.com/flutter-es/ejemplos/blob/master/flutter_switching_widgets/images/moverse_entre_%20widgets.gif)
 
