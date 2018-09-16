@@ -4,7 +4,7 @@ title: Construyendo un Clone de WhatsApp desde cero
 permalink: /flutter_whatsapp/
 ---
 
-En este ejemplo veremos como simular la aplicación de whatsapp utilizando los widgets que ofrece Flutter. Se ahce uso de cuatro págins, 3 modelos y dos clases que permiten orquestar la simulación.
+En este ejemplo veremos como simular la aplicación de whatsapp utilizando los widgets que ofrece Flutter. Se hace uso de cuatro páginas, tres modelos y dos clases que permiten orquestar la simulación.
 
 Se tiene 4 Tabs que contiene en su orden, uno para la cámara, y los otros para mostrar los chats, estados y las llamadas. Mediante un TabBarView se instancian las clases que implementan los widgets que permiten obtener el clone de cada una de las funcionalidades descritas anteriormente. El programa que orquesta todo se llama whtasapp_home.dart
 
@@ -43,7 +43,7 @@ De forma predeterminada, cuando se descarga una imagen, se almacenará en caché
 ## License
 ---
 <aside class="alert alert-info" markdown="1">
-Copyright 2018 Pawan Kumar
+Copyright 2018 Pawan Kumar, César Vega
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
