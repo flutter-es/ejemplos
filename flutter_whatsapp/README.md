@@ -43,7 +43,7 @@ De forma predeterminada, cuando se descarga una imagen, se almacenará en caché
 ## License
 ---
 <aside class="alert alert-info" markdown="1">
-Copyright 2018 Pawan Kumar
+Copyright 2018 Pawan Kumar, César Vega
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
