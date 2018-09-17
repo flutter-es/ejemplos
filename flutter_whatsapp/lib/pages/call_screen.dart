@@ -1,53 +1,81 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/models/call_model.dart';
+import 'package:flutter_whatsapp/CustomCircleAvatar.dart';
 
-class CallScreen extends StatelessWidget {
+class CallScreen extends StatefulWidget {
+  @override
+  _CallScreenState createState() => _CallScreenState();
+}
+
+class _CallScreenState extends State<CallScreen>
+    with AutomaticKeepAliveClientMixin<CallScreen> {
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return new ListView.builder(
-      itemCount: dummyData.length,
-      itemBuilder: (context,i) => new Column(
-        children: <Widget>[
-          new Divider(
-            height: 10.0,            
-          ),
-          new ListTile(
-            leading: new CircleAvatar(
-              foregroundColor: Theme.of(context).primaryColor,
-              backgroundColor: Colors.grey,
-              backgroundImage: new NetworkImage(dummyData[i].avatarUrl),
-            ),
-            title: new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    super.build(context);
+
+    return Container(
+      child: ListView.builder(
+        itemCount: dummyDataCall.length,
+        itemBuilder: (context, i) => Column(
               children: <Widget>[
-                new Text(
-                  dummyData[i].name, 
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                Divider(
+                  height: 10.0,
                 ),
-                new Container(                                                 //new
-                  margin: new EdgeInsets.symmetric(horizontal: 4.0),           //new
-                  child: new IconButton(                                       //new
-                    icon: new Icon(dummyData[i].icono),
-                     onPressed: () => ({})),                                //new
-                ), 
+                ListTile(
+                  leading: Container(
+                    height: 50.0,
+                    width: 50.0,
+                    child: CustomCircleAvatar(
+                      initials: "Loading",
+                      myImage: dummyDataCall[i].netImg,
+                    ),
+                  ),
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        dummyDataCall[i].name,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Container(
+                        //new
+                        margin: EdgeInsets.symmetric(horizontal: 4.0), //new
+                        child: IconButton(
+                            //new
+                            icon: Icon(dummyDataCall[i].icono),
+                            onPressed: () => ({})), //new
+                      ),
+                    ],
+                  ),
+                  subtitle: Container(
+                    padding: const EdgeInsets.only(top: 5.0),
+                    child: Row(children: [
+                      Text(
+                        dummyDataCall[i].message,
+                        style: TextStyle(color: Colors.grey, fontSize: 15.0),
+                      ),
+                      Text(
+                        dummyDataCall[i].time,
+                        style: TextStyle(color: Colors.grey, fontSize: 14.0),
+                      ),
+                    ]),
+                  ),
+                )
               ],
             ),
-            subtitle: new Container(
-              padding: const EdgeInsets.only(top: 5.0),
-              child: new Row(
-                children: [ 
-                  new Text(
-                    dummyData[i].message,
-                    style: new TextStyle(color: Colors.grey, fontSize: 15.0),
-                  ),
-                  new Text(
-                    dummyData[i].time, 
-                    style: TextStyle(color: Colors.grey, fontSize: 14.0),
-                  ),
-                ]),
-            ),
-          )
-        ],
       ),
     );
   }

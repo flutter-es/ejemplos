@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 
 class CustomCircleAvatar extends StatefulWidget {
-  NetworkImage myImage;
-  String initials;
+  final NetworkImage myImage;
+  final String initials;
 
   CustomCircleAvatar({this.myImage, this.initials});
 
   @override
-  CustomCircleAvatarState createState() => new CustomCircleAvatarState();
+  _CustomCircleAvatarState createState() => new _CustomCircleAvatarState();
 }
 
-class CustomCircleAvatarState extends State<CustomCircleAvatar> {
+class _CustomCircleAvatarState extends State<CustomCircleAvatar>
+    with AutomaticKeepAliveClientMixin<CustomCircleAvatar> {
   bool _checkLoading = true;
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   void initState() {
-    super.initState();
     widget.myImage.resolve(new ImageConfiguration()).addListener((_, __) {
       if (mounted) {
         setState(() {
@@ -23,13 +26,18 @@ class CustomCircleAvatarState extends State<CustomCircleAvatar> {
         });
       }
     });
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+
+//        ? new CircleAvatar(child: new Text(widget.initials))
+
     return _checkLoading == true
-        ? new CircleAvatar(child: new Text(widget.initials))
-        : new CircleAvatar(
+        ?  Text(widget.initials)
+        :  CircleAvatar(
             backgroundImage: widget.myImage,
             foregroundColor: new Color(0xff25D366),
           );
