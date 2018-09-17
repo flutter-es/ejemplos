@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/models/chat_model.dart';
-import 'package:flutter_whatsapp/CustomCircleAvatar.dart';
 
 class ChatScreen extends StatefulWidget {
   @override
