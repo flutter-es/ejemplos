@@ -17,47 +17,47 @@ const dummyDataCall = <CallsModel>[
       time: "08:04 AM",
       icono: Icons.video_call,
       netImg: NetworkImage(
-          "https://images.pexels.com/photos/751204/pexels-photo-751204.jpeg?cs=srgb&dl=cute-enjoyment-eyes-751204.jpg&fm=jpg")),
+          "https://randomuser.me/api/portraits/women/3.jpg")),
   const CallsModel(
       name: "Sully Rojas",
       message: "7 de septiembre",
       time: "10:30 AM",
       icono: Icons.video_call,
       netImg: NetworkImage(
-          "https://images.pexels.com/photos/751204/pexels-photo-751204.jpeg?cs=srgb&dl=cute-enjoyment-eyes-751204.jpg&fm=jpg")),
+          "https://randomuser.me/api/portraits/women/3.jpg")),
   const CallsModel(
       name: "Sully Rojas",
       message: "27 de agosto",
       time: "10:19 AM",
       icono: Icons.phone,
       netImg: NetworkImage(
-          "https://images.pexels.com/photos/751204/pexels-photo-751204.jpeg?cs=srgb&dl=cute-enjoyment-eyes-751204.jpg&fm=jpg")),
+          "https://randomuser.me/api/portraits/women/3.jpg")),
   const CallsModel(
       name: "Mario Sabato",
       message: "20 de agosto",
       time: "09:45 PM",
       icono: Icons.phone,
       netImg: NetworkImage(
-          "https://images.pexels.com/photos/769772/pexels-photo-769772.jpeg?cs=srgb&dl=boy-casual-cool-769772.jpg&fm=jpg")),
+          "https://randomuser.me/api/portraits/men/27.jpg")),
   const CallsModel(
       name: "Pedro Avila",
       message: "15 de agosto",
       time: "12:20 PM",
       icono: Icons.phone,
       netImg: NetworkImage(
-          "https://images.pexels.com/photos/777171/pexels-photo-777171.jpeg?cs=srgb&dl=blur-blurred-background-close-up-777171.jpg&fm=jpg")),
+          "https://randomuser.me/api/portraits/men/10.jpg")),
   const CallsModel(
-      name: "Antonio Ocampo",
+      name: "Antonio Palmar",
       message: "11 de agosto",
       time: "13:50 PM",
       icono: Icons.phone,
       netImg: NetworkImage(
-          "https://images.pexels.com/photos/249618/pexels-photo-249618.jpeg?cs=srgb&dl=adult-beard-close-up-249618.jpg&fm=jpg")),
+          "https://randomuser.me/api/portraits/men/16.jpg")),
   const CallsModel(
       name: "David Murcia",
       message: "(2) 5 de agosto",
       time: "11:05 AM",
       icono: Icons.phone,
       netImg: NetworkImage(
-          "https://images.pexels.com/photos/542282/pexels-photo-542282.jpeg?cs=srgb&dl=angry-beard-blur-542282.jpg&fm=jpg")),
+          "https://randomuser.me/api/portraits/men/15.jpg")),
 ];
