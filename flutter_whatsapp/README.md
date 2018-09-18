@@ -67,5 +67,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 </aside>
 
-
-https://github.com/flutter-es/ejemplos/blob/master/flutter_whatsapp/images/clone_whatsapp.gif
+![Flutter Clone WhatsApp Demo](https://github.com/flutter-es/ejemplos/blob/master/flutter_whatsapp/images/clone_whatsapp.gif)
